@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square of a Number</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border: 1px solid  rgb(255, 226, 236);
+            background-color:rgb(255, 226, 236);
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1{
+            font-size: 25px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            color: purple;
+        }
+
+        #number::placeholder{
+            color: purple;
+        }
+
+        #number{
+            display: flex;
+            height: 50px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            width: 270px;
+            text-align: center;
+            border-radius: 10px;
+            border-color: lavender;
+            color: purple;
+        }
+
+        #btn{
+            display: flex;
+            height: 50px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            width: 290px;
+            text-align: center;
+            border-radius: 10px;
+            border-color: lavender;
+            background-color: white;
+            color: purple;
+            
+        }
+
+        @media (max-width: 600px) {
+            .container{
+                height: auto;
+                padding: 15px;
+            }
+
+            #number, #btn{
+                font-size: 14px;
+            }
+
+            h1{
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 400px){
+            .container{
+                height: auto;
+                padding: 10px;
+            }
+
+            #number, #btn{
+                font-size: 12px;
+            }
+
+            h1{
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 601px){
+            .container{
+                height: auto;
+            }
+
+            #number, #btn{
+                font-size: 16px;
+            }
+
+            h1{
+                font-size: 25px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>SQUARE OF A NUMBER</h1>
+        <label for="number"></label>
+        <input type="number" id="number" name="number" placeholder="Enter a number to find square"/>
+        <input type="button" id="btn" onclick="squareofnumber()" value="Calculate Square"/>
+    </div>
+
+    <script>
+        function squareofnumber(){
+            const number = document.getElementById('number').value;
+            if(number != ''){
+                square = number * number;
+                alert('Square of ' +number+ ' is ' +square);
+            }
+            else{
+                alert('Enter a valid number');
+            }
+        }
+    </script>
+</body>
+</html>

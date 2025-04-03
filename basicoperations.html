@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 350px;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border: 4px gray;
+            border-style: inset;
+            box-shadow: rgba(131, 112, 112, 0.5);
+            border-radius: 10px;
+        }
+
+        h1{
+            font-size: 30px;
+            color: grey;
+        }
+
+        input[type="number"]{
+            width: 350px;
+            height: 40px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 5px;
+            border-color: gray;
+        }
+
+        input::placeholder{
+            font-size: 15px;
+            padding: 5px;
+            color: grey;
+        }
+
+        .radio{
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 78px;
+        }
+
+        #operate-btn{
+            width: 350px;
+            height: 40px;
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            border-color: gray;
+            color: grey;
+            font-weight: bolder;
+            background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>CALCULATOR</h1>
+
+        <label for="number1"></label>
+        <input type="number" id="number1" name="number1" placeholder="Enter 1st Number: "/>
+
+        <label for="number2"></label>
+        <input type="number" id="number2" name="number2" placeholder="Enter 2nd Number: "/>
+
+        <div class="radio">
+        <label><input type="radio" name="operation" value="add"/>+</label>
+        <label> <input type="radio" name="operation" value="subtract"/>-</label>
+        <label><input type="radio" name="operation" value="multiply"/>X</label>
+        <label><input type="radio" name="operation" value="divide"/>÷</label>
+        </div>
+
+        <div class="btn">
+            <input type="button" id="operate-btn" value="Calculate" onclick="calculate()"/>
+        </div>
+    </div>
+
+    <script>
+        function calculate(){
+            let num1 = parseFloat(document.getElementById('number1').value);
+            let num2 = parseFloat(document.getElementById('number2').value);
+            let operate = document.querySelector('input[name="operation"]:checked').value;
+            let result;
+
+            if(isNaN(num1) || isNaN(num2)){
+                alert("Please enter valid number");
+                return;
+            }
+
+            switch(operate){
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                default:
+                    alert("Invalid");
+                    break;
+            }
+
+            alert("Result: "+result);
+
+        }
+    </script>
+</body>
+</html>

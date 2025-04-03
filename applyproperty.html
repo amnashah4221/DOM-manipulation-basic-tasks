@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Css Property</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sample-p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.body input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#appy-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#appy-btn:hover {
+    background-color: #45a049;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <p id="sample-p">This is a sample paragraph to check for 
+        changing style by applying CSS properties.</p>
+    <div class="body">
+        <input type="text" id="css-property" placeholder="Enter CSS Property: "/>
+        <input type="text" id="css-value" placeholder="Enter value"/>
+        <input type="button" id="appy-btn" value="Apply CSS" onclick="apply()"/>
+    </div>
+    </div>
+
+    <script>
+        function apply(){
+            const property = document.getElementById('css-property').value;
+            const value = document.getElementById('css-value').value;
+            const paragraph = document.getElementById('sample-p');
+
+            if(property && value){
+                paragraph.style[property] = value;
+
+            }
+            else{
+                alert("Enter valid property and value");
+            }
+        }
+    </script>
+</body>
+</html>
